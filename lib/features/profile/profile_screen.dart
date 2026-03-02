@@ -221,7 +221,7 @@ class ProfileScreen extends ConsumerWidget {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    DateUtils.formatDate(user.joinDate),
+                                    AppDateUtils.formatDate(user.joinDate),
                                     style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,

@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 /// Date utility functions
-class DateUtils {
+class AppDateUtils {
   /// Format date to readable string
   static String formatDate(DateTime date) {
     return DateFormat('MMM dd, yyyy').format(date);

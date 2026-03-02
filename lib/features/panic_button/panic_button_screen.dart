@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_haptic_feedback/flutter_haptic_feedback.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/star_background.dart';
 import '../../core/constants/app_constants.dart';
@@ -90,7 +91,7 @@ class _PanicButtonScreenState extends ConsumerState<PanicButtonScreen> {
   }
   
   Future<void> _handleOptionTap(String option) async {
-    FlutterHapticFeedback.mediumImpact();
+    HapticFeedback.mediumImpact();
     
     switch (option) {
       case 'I relapsed':

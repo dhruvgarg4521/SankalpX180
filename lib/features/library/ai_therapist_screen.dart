@@ -359,11 +359,9 @@ class _Dot extends StatelessWidget {
         shape: BoxShape.circle,
       ),
     )
-        .animate()
+        .animate(onPlay: (controller) => controller.repeat())
         .fadeIn(duration: 400.ms, delay: delay.ms)
         .then()
-        .fadeOut(duration: 400.ms)
-        .then()
-        .repeat();
+        .fadeOut(duration: 400.ms);
   }
 }

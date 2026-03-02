@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_haptic_feedback/flutter_haptic_feedback.dart';
+import 'package:flutter/services.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/star_background.dart';
 import '../../core/widgets/recovery_ring.dart';
@@ -173,8 +173,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       child: userAsync.when(
                         data: (user) {
                           if (user == null) return const SizedBox();
-                          final targetDate = DateUtils.getTargetQuitDate(user.joinDate);
-                          final daysLeft = DateUtils.daysUntil(targetDate);
+                          final targetDate = AppDateUtils.getTargetQuitDate(user.joinDate);
+                          final daysLeft = AppDateUtils.daysUntil(targetDate);
                           return Column(
                             children: [
                               Text(
@@ -183,7 +183,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                DateUtils.formatDate(targetDate),
+                                AppDateUtils.formatDate(targetDate),
                                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                   color: AppTheme.accentBlue,
                                   fontWeight: FontWeight.bold,
@@ -341,7 +341,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          FlutterHapticFeedback.mediumImpact();
+                          HapticFeedback.mediumImpact();
                           // Navigate to progress or start journey
                         },
                         style: ElevatedButton.styleFrom(
@@ -365,7 +365,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          FlutterHapticFeedback.heavyImpact();
+                          HapticFeedback.heavyImpact();
                           Navigator.push(
                             context,
                             MaterialPageRoute(

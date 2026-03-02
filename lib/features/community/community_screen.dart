@@ -297,7 +297,7 @@ class _PostCardState extends ConsumerState<_PostCard> {
                       ),
                     ),
                     Text(
-                      DateUtils.timeAgo(widget.post.createdAt),
+                      AppDateUtils.timeAgo(widget.post.createdAt),
                       style: const TextStyle(
                         fontSize: 12,
                         color: AppTheme.textTertiary,

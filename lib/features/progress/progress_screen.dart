@@ -5,6 +5,7 @@ import '../../core/widgets/star_background.dart';
 import '../../core/providers/user_provider.dart';
 import '../../core/widgets/achievement_badge.dart';
 import '../../services/achievement_service.dart';
+import '../../models/achievement_model.dart';
 import '../../services/streak_service.dart';
 import '../../services/user_service.dart';
 import '../../core/constants/app_constants.dart';
